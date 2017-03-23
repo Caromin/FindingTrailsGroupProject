@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta  charset="UTF-8">
+  <title>Trail Finder</title>
+<!--Using Bootscrap 4.0 alpha -->   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<!--Using jQuery 3.1.1 came with bootstrap -->   
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<!--Personal CSS/IMAGES folders -->
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/images">
+<!--Firebase Script -->    
+    <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
+</head>
+
+<body id="page2">
+<!--Navigation Bar-->
+<div class="d-flex justify-content-end">
+  <div class="mr-auto p-2" id="title">Following <a target="_blank" href="https://github.com/rtaveras824" onclick="this.href">Reuben's</a> Trail<span id="activeUsers"></span></div>
+  <div type="button" id="homepage" class="p-2 nav-item nav-link" href="mainpage.html">
+  Homepage</div>
+  <div type="button" id="aboutUs" class="p-2 nav-item nav-link" href="aboutus.html">
+  About Us</div>
+<!--End of navigation bar div-->  
+</div>
+<br />
+
+
+<!--Where the information will be inputted -->
+<div class="row main">
+  <div class="col-sm-3">
+    <form>
+<!--       <p>Filter Results:</p> -->
+<!--Where the event radio buttons will generate -->       
+        <div class ="event">
+        <div id="filter-input"></div>
+        </div><br /><hr />
+<!--Where the city and state info will be inputted -->
+      <p>Search for a trail:</p>   
+      <input id="name-input" type="textbox" placeholder="Enter a location" />
+      <br />
+      <br />
+<!--When Clicked will push all the selected information above to GET API responses -->         
+      <button id="submit-button" value="submit">Submit</button>  
+      <br />
+      <br />
+      <span id="test"></span>
+      <br /> 
+      <span id="weatherDiv"></span>
+    </form>
+  </div>
+
+<!--Where the information will be displayed --> 
+  <div id="input-display" class="col-sm-9">
+  </div>
+</div>
+<div id="instructions" class="row">
+<div class="col-sm-12">
+<h3>Hello, Welcome to our 1st group project. Below is an explanation of our website.</h3>
+  <ol>
+    <li>Enter any location in the search bar to the left.</li>
+    <li>Once a location is entered, up to 10 markers will display on the map, within a 50mile radius, this is based on TrailAPI parameters.</li>
+    <li>Filters can be used based on activities that each marker provides, please note that TrailAPI has determined 90%+ of the locations as mountain biking & hiking.</li>
+    <li>We have also provided a current location and temperature section after you have inputted a location in the bottom left corner.</li>
+    <li>If interested please take a look at our About Us page to learn more about the team that created this.</li>
+    <li>Filters are still under construction, sorry.</li>
+  </ol>  
+</div>
+</div>
+
+<div class="footer">
+  <div class="img">
+    <p>Last updated: 03/23/2017 by Christian A.
+    <p>APIs Provided By: TrailAPI.com ( &copy; 2012 TrailAPI), developers.google.com ( &copy; 2017 Google), OpenWeatherMap.com ( &copy; 2017 OpenWeatherAPI) </p>
+  </div>
+</div>
+
+
+
+<!--jQuery-->
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+<!--Personal javascript needs to be before googleAPI-->
+<script src="assets/javascript/logic.js" type="text/javascript"></script>
+
+<!--(look up JSONP this is based on a script with a callback function) This is the script needed to run the google api with key attached -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgpkx2l_pbdRWtr5TvjIiU02DbgYaAO7Y&libraries=places&callback=initMap" type="text/javascript"></script>
+
+</body>
+</html>
