@@ -142,3 +142,11 @@ span {
 	padding-right: 2px;
 	margin-top: 5px;
 }
+
+ul {
+	font-size: 13px;
+}
+
+#sidebar {
+	overflow: scroll;
+}

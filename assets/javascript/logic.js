@@ -13,16 +13,6 @@ var nameList = [];
 var descriptionList = [];
 var temperatures = [];
 
-//assuming that when the checkbox is selected, then each variable will before true and be added to the search
-// var hiking = false;
-// var camping = false;
-// var caving = false;
-// var trailrunning = false;
-// var snowsports = false;
-// var horsebackriding = false;
-// var atv = false;
-// var watersports = false;
-
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyD5NXLlTfIfpROe5y5e5-k-MG3L4PKVAeY",
@@ -186,6 +176,7 @@ function trailFinder (latitude, longitude) {
   	
 // _______________________________________________
 //testing for filters
+//did not push to empty array when inside the second loop
 
 // 			for (i=0; i<filterList.length; i++) {
 // 				if ("hiking" == response.places[i].activities[i])
